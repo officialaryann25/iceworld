@@ -1,1 +1,225 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Ice World</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n    <header>\n        <img src=\"ice-cream.jpg\" alt=\"Ice Cream Image\">\n        <nav>\n            <ul>\n                <li><a href=\"index.html\">Home</a></li>\n                <li><a href=\"menu.html\">Menu</a></li>\n                <li><a href=\"categories.html\">Categories</a></li>\n                <li><a href=\"about.html\">About Us</a></li>\n                <li><a href=\"contact.html\">Contact Us</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main>\n        <section id=\"popular-ice-cream\">\n            <h2>Popular Ice Cream</h2>\n            <div>Ice Cream flavors here</div>\n        </section>\n        <section id=\"most-selling-ice-cream\">\n            <h2>Most Selling Ice Cream</h2>\n            <div>Ice Cream flavors here</div>\n        </section>\n        <section id=\"banner\">\n            <h2>Special Offers</h2>\n            <div>Banner content here</div>\n        </section>\n        <section id=\"subscribe\">\n            <h2>Subscribe</h2>\n            <form>\n                <input type=\"email\" placeholder=\"Your Email\">\n                <button type=\"submit\">Subscribe</button>\n            </form>\n        </section>\n    </main>\n    <footer>\n        <nav>\n            <ul>\n                <li><a href=\"index.html\">Home</a></li>\n                <li><a href=\"menu.html\">Menu</a></li>\n                <li><a href=\"categories.html\">Categories</a></li>\n                <li><a href=\"about.html\">About Us</a></li>\n                <li><a href=\"contact.html\">Contact Us</a></li>\n            </ul>\n        </nav>\n        <p>&copy; 2026 Ice World</p>\n    </footer>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="IceWorld - Your ultimate destination for premium handcrafted ice creams. Discover delicious flavors and sweet treats!" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>IceWorld | Premium Ice Creams</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn"><i class="ri-shopping-cart-line"></i></button>
+        <button class="btn"><i class="ri-notification-3-fill"></i></button>
+      </div>
+    </nav>
+
+    <header>
+      <div class="section__container header__container">
+        <div class="header__content">
+          <h1>Welcome to IceWorld</h1>
+          <p class="section__description">
+            Indulge in the finest handcrafted ice creams made with love and the best ingredients. 
+            Experience flavors that will transport you to paradise with every scoop!
+          </p>
+          <a href="menu.html" class="btn">Explore Menu</a>
+        </div>
+        <div class="header__image">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=600&h=600&fit=crop" alt="Delicious Ice Cream" />
+        </div>
+      </div>
+    </header>
+
+    <section class="section__container menu__container" id="menu">
+      <h2 class="section__header">Popular Ice Creams</h2>
+      <p class="section__description">
+        Discover our most loved flavors that keep our customers coming back for more!
+      </p>
+      <div class="menu__grid">
+        <div class="menu__card">
+          <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=300&h=300&fit=crop" alt="Vanilla Dream" />
+          <h4>Vanilla Dream</h4>
+          <p>Classic vanilla made with real Madagascar vanilla beans</p>
+          <div class="price">₹150</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+        <div class="menu__card">
+          <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=300&h=300&fit=crop" alt="Chocolate Delight" />
+          <h4>Chocolate Delight</h4>
+          <p>Rich Belgian chocolate ice cream for chocolate lovers</p>
+          <div class="price">₹180</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+        <div class="menu__card">
+          <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=300&h=300&fit=crop" alt="Strawberry Bliss" />
+          <h4>Strawberry Bliss</h4>
+          <p>Fresh strawberry ice cream with real fruit chunks</p>
+          <div class="price">₹170</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container menu__container">
+      <h2 class="section__header">Most Selling Ice Creams</h2>
+      <p class="section__description">
+        Our bestsellers that everyone is talking about!
+      </p>
+      <div class="menu__grid">
+        <div class="menu__card">
+          <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?w=300&h=300&fit=crop" alt="Mango Magic" />
+          <h4>Mango Magic</h4>
+          <p>Made with Alphonso mangoes for authentic flavor</p>
+          <div class="price">₹160</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+        <div class="menu__card">
+          <img src="https://images.unsplash.com/photo-1547825407-151d3f9c2150?w=300&h=300&fit=crop" alt="Mint Chocolate Chip" />
+          <h4>Mint Chocolate Chip</h4>
+          <p>Refreshing mint with chocolate chips</p>
+          <div class="price">₹175</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+        <div class="menu__card">
+          <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=300&h=300&fit=crop" alt="Butter Scotch" />
+          <h4>Butter Scotch</h4>
+          <p>Creamy butterscotch with caramel swirls</p>
+          <div class="price">₹165</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container menu__container" id="categories">
+      <h2 class="section__header">Ice Cream Categories</h2>
+      <p class="section__description">
+        Explore our wide variety of ice cream categories
+      </p>
+      <div class="categories__grid">
+        <div class="category__card">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=400&h=400&fit=crop" alt="Fruit Flavors" />
+          <div class="category__content">
+            <h4>Fruit Flavors</h4>
+            <p>Fresh and fruity</p>
+          </div>
+        </div>
+        <div class="category__card">
+          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784343?w=400&h=400&fit=crop" alt="Chocolate Varieties" />
+          <div class="category__content">
+            <h4>Chocolate Varieties</h4>
+            <p>For chocoholics</p>
+          </div>
+        </div>
+        <div class="category__card">
+          <img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?w=400&h=400&fit=crop" alt="Premium Sundaes" />
+          <div class="category__content">
+            <h4>Premium Sundaes</h4>
+            <p>Loaded with toppings</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container">
+      <div class="banner">
+        <div class="banner__container">
+          <div class="banner__content">
+            <h2>Special Offer!</h2>
+            <p>
+              Get 20% off on all family packs this week! Perfect for parties and celebrations. 
+              Don't miss out on this amazing deal!
+            </p>
+            <a href="menu.html" class="btn" style="background-color: white; color: #ed8613;">Order Now</a>
+          </div>
+          <div class="banner__image">
+            <img src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?w=500&h=500&fit=crop" alt="Special Offer" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="subscribe">
+      <div class="section__container subscribe__container">
+        <h2 class="section__header">Subscribe to Our Newsletter</h2>
+        <p class="section__description">
+          Get the latest updates on new flavors, special offers, and exclusive deals!
+        </p>
+        <form id="subscribeForm" class="subscribe__form">
+          <input 
+            type="email" 
+            id="subscribeEmail" 
+            placeholder="Enter your email address" 
+            required 
+          />
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+        <div id="subscribeSuccess" class="success__message"></div>
+        <div id="subscribeError" class="error__message"></div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+          <p style="margin-top: 1rem; opacity: 0.8;">
+            Your ultimate destination for premium ice creams. Made with love, served with joy!
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4 style="margin-bottom: 1rem; font-size: 1.2rem;">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Categories</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 style="margin-bottom: 1rem; font-size: 1.2rem;">Follow Us</h4>
+          <ul class="socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-pinterest-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-phone-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 IceWorld. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

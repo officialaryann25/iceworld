@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Explore IceWorld's extensive menu of delicious ice cream flavors, sundaes, and special treats. Find your favorite flavor today!" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Menu | IceWorld</title>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="gallery.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn"><i class="ri-shopping-cart-line"></i></button>
+        <button class="btn"><i class="ri-notification-3-fill"></i></button>
+      </div>
+    </nav>
+
+    <section class="menu__hero">
+      <div class="section__container">
+        <h1 class="section__header">Our Complete Menu</h1>
+        <p class="section__description">
+          Discover all our delicious flavors and special treats. Every scoop is made with love!
+        </p>
+      </div>
+    </section>
+
+    <section class="section__container">
+      <div class="menu__filters">
+        <button class="filter__btn active" data-filter="all">All Flavors</button>
+        <button class="filter__btn" data-filter="classic">Classic</button>
+        <button class="filter__btn" data-filter="premium">Premium</button>
+        <button class="filter__btn" data-filter="fruit">Fruit Based</button>
+        <button class="filter__btn" data-filter="chocolate">Chocolate</button>
+        <button class="filter__btn" data-filter="specialty">Specialty</button>
+      </div>
+
+      <div class="menu__grid">
+        <!-- Classic Flavors -->
+        <div class="menu__card" data-category="classic">
+          <img src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=300&h=300&fit=crop" alt="Vanilla Dream" />
+          <h4>Vanilla Dream</h4>
+          <p>Classic vanilla made with real Madagascar vanilla beans</p>
+          <div class="price">₹150</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="classic">
+          <img src="https://images.unsplash.com/photo-1563729784474-d77dbb933a9e?w=300&h=300&fit=crop" alt="Chocolate Delight" />
+          <h4>Chocolate Delight</h4>
+          <p>Rich Belgian chocolate ice cream for chocolate lovers</p>
+          <div class="price">₹180</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="fruit">
+          <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=300&h=300&fit=crop" alt="Strawberry Bliss" />
+          <h4>Strawberry Bliss</h4>
+          <p>Fresh strawberry ice cream with real fruit chunks</p>
+          <div class="price">₹170</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="fruit">
+          <img src="https://images.unsplash.com/photo-1576506295286-5cda18df43e7?w=300&h=300&fit=crop" alt="Mango Magic" />
+          <h4>Mango Magic</h4>
+          <p>Made with Alphonso mangoes for authentic flavor</p>
+          <div class="price">₹160</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="chocolate">
+          <img src="https://images.unsplash.com/photo-1547825407-151d3f9c2150?w=300&h=300&fit=crop" alt="Mint Chocolate Chip" />
+          <h4>Mint Chocolate Chip</h4>
+          <p>Refreshing mint with chocolate chips</p>
+          <div class="price">₹175</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="classic">
+          <img src="https://images.unsplash.com/photo-1579954115545-a95591f28bfc?w=300&h=300&fit=crop" alt="Butter Scotch" />
+          <h4>Butter Scotch</h4>
+          <p>Creamy butterscotch with caramel swirls</p>
+          <div class="price">₹165</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <!-- Premium Flavors -->
+        <div class="menu__card" data-category="premium">
+          <img src="https://images.unsplash.com/photo-1587049352846-4a222e784343?w=300&h=300&fit=crop" alt="Belgian Chocolate Truffle" />
+          <h4>Belgian Chocolate Truffle</h4>
+          <p>Luxurious Belgian chocolate with truffle pieces</p>
+          <div class="price">₹220</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="premium">
+          <img src="https://images.unsplash.com/photo-1559181567-c3190ca9959b?w=300&h=300&fit=crop" alt="Pistachio Almond" />
+          <h4>Pistachio Almond</h4>
+          <p>Premium nuts blended into creamy perfection</p>
+          <div class="price">₹200</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="chocolate">
+          <img src="https://images.unsplash.com/photo-1560008581-09826d1de69e?w=300&h=300&fit=crop" alt="Triple Chocolate Fudge" />
+          <h4>Triple Chocolate Fudge</h4>
+          <p>Three types of chocolate in one decadent scoop</p>
+          <div class="price">₹190</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="fruit">
+          <img src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=300&h=300&fit=crop" alt="Mixed Berry Delight" />
+          <h4>Mixed Berry Delight</h4>
+          <p>Strawberries, blueberries, and raspberries combined</p>
+          <div class="price">₹185</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="fruit">
+          <img src="https://images.unsplash.com/photo-1633933358116-a27b902fad35?w=300&h=300&fit=crop" alt="Tropical Paradise" />
+          <h4>Tropical Paradise</h4>
+          <p>Pineapple, coconut, and mango fusion</p>
+          <div class="price">₹180</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="specialty">
+          <img src="https://images.unsplash.com/photo-1516559828984-fb3b99548b21?w=300&h=300&fit=crop" alt="Cookie Dough" />
+          <h4>Cookie Dough</h4>
+          <p>Vanilla ice cream loaded with cookie dough chunks</p>
+          <div class="price">₹195</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="specialty">
+          <img src="https://images.unsplash.com/photo-1567206563064-6f60f40a2b57?w=300&h=300&fit=crop" alt="Cookies and Cream" />
+          <h4>Cookies and Cream</h4>
+          <p>Creamy vanilla with crushed Oreo cookies</p>
+          <div class="price">₹185</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="specialty">
+          <img src="https://images.unsplash.com/photo-1582716401301-b2407dc7563d?w=300&h=300&fit=crop" alt="Salted Caramel" />
+          <h4>Salted Caramel</h4>
+          <p>Sweet caramel with a hint of sea salt</p>
+          <div class="price">₹190</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="chocolate">
+          <img src="https://images.unsplash.com/photo-1615478503562-ec2d8aa0e24e?w=300&h=300&fit=crop" alt="Dark Chocolate" />
+          <h4>Dark Chocolate</h4>
+          <p>Rich dark chocolate for the true connoisseur</p>
+          <div class="price">₹185</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="premium">
+          <img src="https://images.unsplash.com/photo-1570197788417-0e82375c9371?w=300&h=300&fit=crop" alt="Hazelnut Heaven" />
+          <h4>Hazelnut Heaven</h4>
+          <p>Creamy hazelnut with chocolate swirls</p>
+          <div class="price">₹210</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+
+        <div class="menu__card" data-category="fruit">
+          <img src="https://images.unsplash.com/photo-1587440871875-191322ee64b0?w=300&h=300&fit=crop" alt="Lemon Sorbet" />
+          <h4>Lemon Sorbet</h4>
+          <p>Refreshing lemon sorbet, dairy-free</p>
+          <div class="price">₹140</div>
+          <button class="btn buy-now-btn">Buy Now</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container" style="padding-top: 2rem;">
+      <div class="banner">
+        <div class="banner__container">
+          <div class="banner__content">
+            <h2>Family Packs Available!</h2>
+            <p>
+              Order our family packs for parties and celebrations. Perfect for sharing 
+              the joy of delicious ice cream with your loved ones!
+            </p>
+            <a href="contact.html" class="btn" style="background-color: white; color: #ed8613;">Contact Us</a>
+          </div>
+          <div class="banner__image">
+            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&h=500&fit=crop" alt="Family Packs" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+          <p style="margin-top: 1rem; opacity: 0.8;">
+            Your ultimate destination for premium ice creams. Made with love, served with joy!
+          </p>
+        </div>
+        <div class="footer__col">
+          <h4 style="margin-bottom: 1rem; font-size: 1.2rem;">Quick Links</h4>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="gallery.html">Categories</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4 style="margin-bottom: 1rem; font-size: 1.2rem;">Follow Us</h4>
+          <ul class="socials">
+            <li>
+              <a href="#"><i class="ri-facebook-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-twitter-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-pinterest-line"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-phone-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2025 IceWorld. All rights reserved.
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
