@@ -1,51 +1,34 @@
-// Contact form handling
+// ===== CONTACT FORM =====
+// IMPROVEMENT: Uses showToast() (from main.js) instead of alert()
+// IMPROVEMENT: Validates phone number format before submission
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
   contactForm.addEventListener('submit', (e) => {
     e.preventDefault();
-    
-    // Get form values
-    const name = document.getElementById('name').value;
-    const email = document.getElementById('email').value;
-    const phone = document.getElementById('phone').value;
-    const subject = document.getElementById('subject').value;
-    const message = document.getElementById('message').value;
-    
-    // Here you can add functionality to send the form data to a server
-    // For now, we'll just show a success message
-    
-    alert(`Thank you for contacting us, ${name}! We will get back to you soon.`);
-    
-    // Reset form
+
+    const name    = document.getElementById('name').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const phone   = document.getElementById('phone').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Phone validation: accepts international format (+91 8750141860),
+    // digits, spaces, and hyphens. Minimum 8 chars, maximum 15 chars.
+    // Examples: +91 8750141860, 8750-141860, +1-800-555-0199
+    const phonePattern = /^[+\d][\d\s\-]{7,14}$/;
+    if (phone && !phonePattern.test(phone)) {
+      if (typeof showToast === 'function') {
+        showToast('Please enter a valid phone number.', 'error');
+      }
+      document.getElementById('phone').focus();
+      return;
+    }
+
+    if (typeof showToast === 'function') {
+      showToast(`Thanks, ${name}! We'll get back to you soon.`, 'success', 4000);
+    }
+
     contactForm.reset();
-  });
-}
-
-// ScrollReveal animations for contact page
-if (typeof ScrollReveal !== 'undefined') {
-  const scrollRevealOption = {
-    distance: "50px",
-    origin: "bottom",
-    duration: 1000,
-  };
-
-  ScrollReveal().reveal(".contact__hero .section__header", {
-    ...scrollRevealOption,
-  });
-  
-  ScrollReveal().reveal(".contact__hero .section__description", {
-    ...scrollRevealOption,
-    delay: 500,
-  });
-
-  ScrollReveal().reveal(".contact__card", {
-    ...scrollRevealOption,
-    interval: 200,
-  });
-
-  ScrollReveal().reveal(".contact__form__wrapper", {
-    ...scrollRevealOption,
-    delay: 300,
   });
 }

@@ -1,14 +1,18 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+/* IMPROVEMENT: Load only the weights actually used (400, 500, 600, 700) to reduce font payload */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");
 
 :root {
   --primary-color: #ed8613;
   --primary-color-dark: #d47911;
-  --secondary-color: #5b4fcf;
   --text-dark: #333333;
   --text-light: #767268;
   --extra-light: #f1f1f1;
   --white: #ffffff;
   --max-width: 1200px;
+  /* Transition shorthand tokens for consistency */
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.5s ease;
 }
 
 * {
@@ -47,7 +51,7 @@
   color: var(--white);
   background-color: var(--primary-color);
   border-radius: 5px;
-  transition: 0.3s;
+  transition: background-color var(--transition-base), box-shadow var(--transition-base), color var(--transition-base);
   cursor: pointer;
 }
 
@@ -56,14 +60,21 @@
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+/* BUGFIX: display:flex on img is invalid; block removes unwanted inline gap */
 img {
-  display: flex;
+  display: block;
   width: 100%;
 }
 
 a {
   text-decoration: none;
-  transition: 0.3s;
+  transition: color var(--transition-base), background-color var(--transition-base);
+}
+
+/* IMPROVEMENT: Keyboard focus-visible ring for accessibility */
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 3px;
 }
 
 ul {
@@ -77,6 +88,18 @@ body {
 
 body {
   font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-dark);
+}
+
+/* IMPROVEMENT: Ensure form elements inherit font so they don't fall back to system font */
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
 }
 
 /* ===== NAV ===== */
@@ -85,6 +108,11 @@ nav {
   isolation: isolate;
   width: 100%;
   z-index: 9;
+}
+
+/* IMPROVEMENT: Shadow appears on scroll to keep nav visually separated from content */
+nav.scrolled .nav__header {
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.12);
 }
 
 .nav__header {
@@ -132,12 +160,28 @@ nav {
   font-weight: 500;
   color: var(--white);
   white-space: nowrap;
+  transition: color var(--transition-base);
 }
 
-.nav__links a:hover {
+.nav__links a:hover,
+.nav__links a.active {
   color: var(--text-dark);
 }
 
+/* IMPROVEMENT: Overlay behind mobile menu so clicking outside closes it */
+.nav__overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 8;
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.nav__overlay.open {
+  display: block;
+}
+
+/* Hidden on mobile, shown at desktop breakpoint */
 .nav__btns {
   display: none;
 }
@@ -232,7 +276,7 @@ header {
   height: 60%;
   width: 100%;
   z-index: -1;
-  transition: 0.5s;
+  transition: height var(--transition-slow);
   box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -419,7 +463,7 @@ header {
   border-radius: 10px;
   padding: 2rem;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.06);
-  transition: 0.3s;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .review__card:hover {
@@ -880,7 +924,7 @@ footer {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .menu__card:hover {
@@ -984,7 +1028,7 @@ footer {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.4s;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .category__card:hover {
@@ -1065,7 +1109,7 @@ footer {
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
 }
 
 .owner__card:hover {
@@ -1129,7 +1173,7 @@ footer {
   padding: 2rem;
   text-align: center;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
-  transition: 0.3s;
+  transition: transform var(--transition-base);
 }
 
 .value__card:hover {
@@ -1184,7 +1228,7 @@ footer {
   padding: 1.25rem;
   background-color: var(--extra-light);
   border-radius: 10px;
-  transition: 0.3s;
+  transition: background-color var(--transition-base);
 }
 
 .contact__card:hover {
@@ -1380,7 +1424,8 @@ footer {
     color: var(--text-dark);
   }
 
-  .nav__links a:hover {
+  .nav__links a:hover,
+  .nav__links a.active {
     color: var(--primary-color);
   }
 
@@ -1570,4 +1615,107 @@ footer {
   .category__grid {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+
+/* ===== TOAST NOTIFICATION ===== */
+/* IMPROVEMENT: Replace browser alert() with styled toast for better UX */
+.toast-container {
+  position: fixed;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 999;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+  pointer-events: none;
+}
+
+.toast {
+  padding: 0.875rem 1.5rem;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--white);
+  background-color: var(--text-dark);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: auto;
+  white-space: nowrap;
+  max-width: 90vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast.toast--success {
+  background-color: #27ae60;
+}
+
+.toast.toast--error {
+  background-color: #e74c3c;
+}
+
+.toast.toast--info {
+  background-color: var(--primary-color);
+}
+
+/* ===== SCROLL-TO-TOP BUTTON ===== */
+/* IMPROVEMENT: Helps user on long menu/category pages */
+.scroll-top-btn {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 44px;
+  height: 44px;
+  background-color: var(--primary-color);
+  color: var(--white);
+  border: none;
+  border-radius: 50%;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 16px rgba(237, 134, 19, 0.35);
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity var(--transition-base), transform var(--transition-base), background-color var(--transition-base);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.scroll-top-btn.visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.scroll-top-btn:hover {
+  background-color: var(--primary-color-dark);
+}
+
+/* ===== OWNER AVATAR FALLBACK ===== */
+/* IMPROVEMENT: When owner photo is missing, show a branded placeholder */
+.owner__image--placeholder {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff5e6, #fde6f2);
+  font-size: 4rem;
+}
+
+/* ===== AUTH FORM FOCUS ===== */
+.auth-form input:focus {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(237, 134, 19, 0.15);
 }

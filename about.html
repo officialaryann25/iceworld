@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <title>About Us | IceWorld</title>
+    <meta name="description" content="Learn the story of IceWorld, meet our founders Mahi Sehrawat and Priyanshi, and discover the values behind our premium ice creams." />
   </head>
   <body>
     <nav>
@@ -28,12 +29,12 @@
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <div class="nav__btns">
-        <button class="btn" id="login-btn" title="Login"><i class="ri-user-line"></i></button>
-        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;"></span>
-        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout"><i class="ri-logout-box-line"></i></button>
-        <button class="btn" id="cart-btn" title="Cart">
+        <button class="btn" id="login-btn" title="Login" aria-label="Login to your account"><i class="ri-user-line"></i></button>
+        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;" aria-live="polite"></span>
+        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout" aria-label="Logout"><i class="ri-logout-box-line"></i></button>
+        <button class="btn" id="cart-btn" title="Cart" aria-label="Open shopping cart">
           <i class="ri-shopping-cart-line"></i>
-          <span class="cart-badge" id="cart-badge" style="display:none;">0</span>
+          <span class="cart-badge" id="cart-badge" style="display:none;" aria-label="items in cart">0</span>
         </button>
       </div>
     </nav>
@@ -67,8 +68,8 @@
         
         <div class="owners__grid">
           <div class="owner__card">
-            <div class="owner__image">
-              <img src="assets/owner-1.jpg" alt="Mahi Sehrawat" />
+            <div class="owner__image owner__image--placeholder" role="img" aria-label="Mahi Sehrawat">
+              🍦
             </div>
             <div class="owner__info">
               <h3>Mahi Sehrawat</h3>
@@ -85,8 +86,8 @@
           </div>
 
           <div class="owner__card">
-            <div class="owner__image">
-              <img src="assets/owner-2.jpg" alt="Priyanshi" />
+            <div class="owner__image owner__image--placeholder" role="img" aria-label="Priyanshi">
+              ☕
             </div>
             <div class="owner__info">
               <h3>Priyanshi</h3>
@@ -163,7 +164,7 @@
         </div>
       </div>
       <div class="footer__bar">
-        Copyright © 2025 Web Design Mastery. All rights reserved.
+        Copyright &copy; 2025 IceWorld. All rights reserved.
       </div>
     </footer>
 
@@ -214,15 +215,5 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
-    <script>
-      document.querySelectorAll(".auth-tab").forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const target = tab.dataset.tab;
-          document.querySelectorAll(".auth-panel").forEach((p) => {
-            p.style.display = p.id === target + "-panel" ? "block" : "none";
-          });
-        });
-      });
-    </script>
   </body>
 </html>

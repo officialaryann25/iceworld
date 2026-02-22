@@ -6,6 +6,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <title>Categories | IceWorld</title>
+    <meta name="description" content="Browse IceWorld categories: handcrafted ice creams, artisan coffees, thick shakes, and indulgent desserts." />
   </head>
   <body>
 
@@ -27,12 +28,12 @@
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <div class="nav__btns">
-        <button class="btn" id="login-btn" title="Login"><i class="ri-user-line"></i></button>
-        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;"></span>
-        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout"><i class="ri-logout-box-line"></i></button>
-        <button class="btn" id="cart-btn" title="Cart">
+        <button class="btn" id="login-btn" title="Login" aria-label="Login to your account"><i class="ri-user-line"></i></button>
+        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;" aria-live="polite"></span>
+        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout" aria-label="Logout"><i class="ri-logout-box-line"></i></button>
+        <button class="btn" id="cart-btn" title="Cart" aria-label="Open shopping cart">
           <i class="ri-shopping-cart-line"></i>
-          <span class="cart-badge" id="cart-badge" style="display:none;">0</span>
+          <span class="cart-badge" id="cart-badge" style="display:none;" aria-label="items in cart">0</span>
         </button>
       </div>
     </nav>
@@ -50,7 +51,7 @@
       <div class="category__grid">
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&auto=format&fit=crop" alt="Strawberry Dream" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&auto=format&fit=crop" alt="Strawberry Dream" />
           <div class="category__card__body">
             <h4 class="category__card__name">Strawberry Dream</h4>
             <p class="category__card__price">&#x20B9;120</p>
@@ -59,7 +60,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=400&auto=format&fit=crop" alt="Vanilla Royale" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=400&auto=format&fit=crop" alt="Vanilla Royale" />
           <div class="category__card__body">
             <h4 class="category__card__name">Vanilla Royale</h4>
             <p class="category__card__price">&#x20B9;110</p>
@@ -68,7 +69,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop" alt="Choco Lava Sundae" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop" alt="Choco Lava Sundae" />
           <div class="category__card__body">
             <h4 class="category__card__name">Choco Lava Sundae</h4>
             <p class="category__card__price">&#x20B9;160</p>
@@ -77,7 +78,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=400&auto=format&fit=crop" alt="Blueberry Swirl" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=400&auto=format&fit=crop" alt="Blueberry Swirl" />
           <div class="category__card__body">
             <h4 class="category__card__name">Blueberry Swirl</h4>
             <p class="category__card__price">&#x20B9;130</p>
@@ -95,7 +96,7 @@
       <div class="category__grid">
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&auto=format&fit=crop" alt="Mocha Bliss" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&auto=format&fit=crop" alt="Mocha Bliss" />
           <div class="category__card__body">
             <h4 class="category__card__name">Mocha Bliss</h4>
             <p class="category__card__price">&#x20B9;180</p>
@@ -104,7 +105,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1561303600-840b53ebb2c4?w=400&auto=format&fit=crop" alt="Caramel Cappuccino" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1561303600-840b53ebb2c4?w=400&auto=format&fit=crop" alt="Caramel Cappuccino" />
           <div class="category__card__body">
             <h4 class="category__card__name">Caramel Cappuccino</h4>
             <p class="category__card__price">&#x20B9;200</p>
@@ -113,7 +114,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&auto=format&fit=crop" alt="Cold Brew Delight" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&auto=format&fit=crop" alt="Cold Brew Delight" />
           <div class="category__card__body">
             <h4 class="category__card__name">Cold Brew Delight</h4>
             <p class="category__card__price">&#x20B9;160</p>
@@ -122,7 +123,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&auto=format&fit=crop" alt="Espresso Shot" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&auto=format&fit=crop" alt="Espresso Shot" />
           <div class="category__card__body">
             <h4 class="category__card__name">Double Espresso</h4>
             <p class="category__card__price">&#x20B9;140</p>
@@ -140,7 +141,7 @@
       <div class="category__grid">
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop" alt="Mango Tango" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop" alt="Mango Tango" />
           <div class="category__card__body">
             <h4 class="category__card__name">Mango Tango</h4>
             <p class="category__card__price">&#x20B9;150</p>
@@ -149,7 +150,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=400&auto=format&fit=crop" alt="Oreo Crunch" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=400&auto=format&fit=crop" alt="Oreo Crunch" />
           <div class="category__card__body">
             <h4 class="category__card__name">Oreo Crunch</h4>
             <p class="category__card__price">&#x20B9;170</p>
@@ -158,7 +159,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1614777986387-7b0f785d7c17?w=400&auto=format&fit=crop" alt="Strawberry Banana" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1614777986387-7b0f785d7c17?w=400&auto=format&fit=crop" alt="Strawberry Banana" />
           <div class="category__card__body">
             <h4 class="category__card__name">Strawberry Banana</h4>
             <p class="category__card__price">&#x20B9;140</p>
@@ -167,7 +168,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&auto=format&fit=crop" alt="Butterscotch Bliss" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&auto=format&fit=crop" alt="Butterscotch Bliss" />
           <div class="category__card__body">
             <h4 class="category__card__name">Butterscotch Bliss</h4>
             <p class="category__card__price">&#x20B9;155</p>
@@ -185,7 +186,7 @@
       <div class="category__grid">
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&auto=format&fit=crop" alt="Belgian Waffle" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&auto=format&fit=crop" alt="Belgian Waffle" />
           <div class="category__card__body">
             <h4 class="category__card__name">Belgian Waffle</h4>
             <p class="category__card__price">&#x20B9;220</p>
@@ -194,7 +195,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&auto=format&fit=crop" alt="Choco Lava Cake" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&auto=format&fit=crop" alt="Choco Lava Cake" />
           <div class="category__card__body">
             <h4 class="category__card__name">Choco Lava Cake</h4>
             <p class="category__card__price">&#x20B9;190</p>
@@ -203,7 +204,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&auto=format&fit=crop" alt="French Toast" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&auto=format&fit=crop" alt="French Toast" />
           <div class="category__card__body">
             <h4 class="category__card__name">French Toast Delight</h4>
             <p class="category__card__price">&#x20B9;175</p>
@@ -212,7 +213,7 @@
         </div>
 
         <div class="category__card">
-          <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&auto=format&fit=crop" alt="Sundae Special" />
+          <img loading="lazy" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&auto=format&fit=crop" alt="Sundae Special" />
           <div class="category__card__body">
             <h4 class="category__card__name">Sundae Special</h4>
             <p class="category__card__price">&#x20B9;145</p>
@@ -297,15 +298,5 @@
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
-    <script>
-      document.querySelectorAll(".auth-tab").forEach((tab) => {
-        tab.addEventListener("click", () => {
-          const target = tab.dataset.tab;
-          document.querySelectorAll(".auth-panel").forEach((p) => {
-            p.style.display = p.id === target + "-panel" ? "block" : "none";
-          });
-        });
-      });
-    </script>
   </body>
 </html>
