@@ -3,15 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
     <title>Contact Us | IceWorld</title>
   </head>
   <body>
-    <nav>
+    <nav id="navbar">
       <div class="nav__header">
         <div class="nav__logo">
           <a href="index.html" class="logo">Ice<span>World</span></a>
@@ -22,14 +20,19 @@
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#menu">Menu</a></li>
-        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="category.html">Categories</a></li>
         <li><a href="about.html">About Us</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
+        <li><a href="contact.html" class="active">Contact Us</a></li>
       </ul>
       <div class="nav__btns">
-        <button class="btn"><i class="ri-shopping-cart-line"></i></button>
-        <button class="btn"><i class="ri-notification-3-fill"></i></button>
+        <button class="btn btn--icon" id="cart-btn" title="Cart" style="position:relative;">
+          <i class="ri-shopping-cart-line"></i>
+          <span class="cart-badge" id="cart-count">0</span>
+        </button>
+        <button class="btn" id="login-btn">
+          <i class="ri-user-line"></i> <span id="login-label">Login</span>
+        </button>
       </div>
     </nav>
 
@@ -46,12 +49,10 @@
       <div class="contact__grid">
         <div class="contact__info">
           <h2 class="section__header">Contact Information</h2>
-          
+
           <div class="contact__cards">
             <div class="contact__card">
-              <div class="contact__icon">
-                <i class="ri-map-pin-fill"></i>
-              </div>
+              <div class="contact__icon"><i class="ri-map-pin-fill"></i></div>
               <div class="contact__details">
                 <h4>Visit Us</h4>
                 <p>IceWorld Store<br>Your City, Your State<br>PIN Code</p>
@@ -59,9 +60,7 @@
             </div>
 
             <div class="contact__card">
-              <div class="contact__icon">
-                <i class="ri-phone-fill"></i>
-              </div>
+              <div class="contact__icon"><i class="ri-phone-fill"></i></div>
               <div class="contact__details">
                 <h4>Call Us</h4>
                 <p>Mahi: +91 8750141860</p>
@@ -70,9 +69,7 @@
             </div>
 
             <div class="contact__card">
-              <div class="contact__icon">
-                <i class="ri-mail-fill"></i>
-              </div>
+              <div class="contact__icon"><i class="ri-mail-fill"></i></div>
               <div class="contact__details">
                 <h4>Email Us</h4>
                 <p>mahisehrawat2006@gmail.com</p>
@@ -81,9 +78,7 @@
             </div>
 
             <div class="contact__card">
-              <div class="contact__icon">
-                <i class="ri-time-fill"></i>
-              </div>
+              <div class="contact__icon"><i class="ri-time-fill"></i></div>
               <div class="contact__details">
                 <h4>Working Hours</h4>
                 <p>Monday - Saturday: 10:00 AM - 10:00 PM</p>
@@ -95,18 +90,10 @@
           <div class="contact__social">
             <h4>Follow Us</h4>
             <ul class="socials">
-              <li>
-                <a href="#"><i class="ri-facebook-fill"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="ri-twitter-fill"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="ri-instagram-fill"></i></a>
-              </li>
-              <li>
-                <a href="#"><i class="ri-pinterest-line"></i></a>
-              </li>
+              <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+              <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+              <li><a href="#"><i class="ri-instagram-fill"></i></a></li>
+              <li><a href="#"><i class="ri-pinterest-line"></i></a></li>
             </ul>
           </div>
         </div>
@@ -117,71 +104,153 @@
             <div class="form__group">
               <label for="name">Your Name</label>
               <input type="text" id="name" name="name" placeholder="Enter your name" required />
+              <p class="form__error" id="name-error"></p>
             </div>
-            
+
             <div class="form__group">
               <label for="email">Your Email</label>
               <input type="email" id="email" name="email" placeholder="Enter your email" required />
+              <p class="form__error" id="email-error"></p>
             </div>
-            
+
             <div class="form__group">
               <label for="phone">Phone Number</label>
               <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required />
+              <p class="form__error" id="phone-error"></p>
             </div>
-            
+
             <div class="form__group">
               <label for="subject">Subject</label>
               <input type="text" id="subject" name="subject" placeholder="Enter subject" required />
             </div>
-            
+
             <div class="form__group">
               <label for="message">Message</label>
               <textarea id="message" name="message" rows="5" placeholder="Enter your message" required></textarea>
+              <p class="form__error" id="message-error"></p>
             </div>
-            
-            <button type="submit" class="btn">Send Message</button>
+
+            <button type="submit" class="btn">Send Message <i class="ri-send-plane-line"></i></button>
+            <p class="form__success" id="form-success">Thank you! We will get back to you soon. 🍦</p>
           </form>
         </div>
       </div>
+    </section>
+
+    <!-- GOOGLE MAPS SECTION -->
+    <section class="map__section section__container">
+      <h2 class="section__header">Find Us Here</h2>
+      <iframe
+        class="map__embed"
+        src="https://maps.google.com/maps?q=New+Delhi,+India&output=embed"
+        width="100%"
+        height="400"
+        style="border:0;display:block;"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="IceWorld Location Map"
+      ></iframe>
     </section>
 
     <footer>
       <div class="section__container footer__container">
         <div class="footer__col">
           <a href="index.html" class="logo">Ice<span>World</span></a>
+          <p>Premium handcrafted ice creams and aromatic coffees.</p>
+          <ul class="socials" style="margin-top:1rem;">
+            <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="#"><i class="ri-instagram-fill"></i></a></li>
+            <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+            <li><a href="#"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
         </div>
         <div class="footer__col">
+          <h4>Quick Links</h4>
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#menu">Menu</a></li>
-            <li><a href="index.html#categories">Categories</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="category.html">Categories</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
         </div>
         <div class="footer__col">
-          <ul class="socials">
-            <li>
-              <a href="#"><i class="ri-facebook-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-twitter-fill"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-pinterest-line"></i></a>
-            </li>
-            <li>
-              <a href="#"><i class="ri-phone-fill"></i></a>
-            </li>
+          <h4>Contact</h4>
+          <ul class="footer__links">
+            <li><a href="tel:+918750141860"><i class="ri-phone-line"></i> +91 8750141860</a></li>
+            <li><a href="mailto:mahisehrawat2006@gmail.com"><i class="ri-mail-line"></i> mahisehrawat2006@gmail.com</a></li>
           </ul>
         </div>
       </div>
-      <div class="footer__bar">
-        Copyright © 2025 Web Design Mastery. All rights reserved.
-      </div>
+      <div class="footer__bar">© 2026 IceWorld. All rights reserved.</div>
     </footer>
 
+    <!-- CART OVERLAY & SIDEBAR -->
+    <div class="cart__overlay" id="cart-overlay" onclick="closeCart()"></div>
+    <aside class="cart__sidebar" id="cart-sidebar">
+      <div class="cart__sidebar__header">
+        <h3><i class="ri-shopping-cart-2-line"></i> Your Cart</h3>
+        <button class="cart__close" onclick="closeCart()"><i class="ri-close-line"></i></button>
+      </div>
+      <div class="cart__items" id="cart-items-list">
+        <div class="cart__empty"><i class="ri-shopping-basket-2-line"></i><p>Your cart is empty.</p></div>
+      </div>
+      <div class="cart__footer">
+        <div class="cart__total"><span>Total</span><span id="cart-total">&#x20B9;0</span></div>
+        <button class="btn" onclick="openCheckout()">Checkout <i class="ri-arrow-right-line"></i></button>
+      </div>
+    </aside>
+
+    <!-- LOGIN / REGISTER MODAL -->
+    <div class="modal__overlay" id="auth-modal">
+      <div class="modal">
+        <button class="modal__close" onclick="closeAuthModal()"><i class="ri-close-line"></i></button>
+        <h2 class="modal__title">Welcome Back &#x1F44B;</h2>
+        <div class="modal__tabs">
+          <button class="modal__tab active" onclick="switchTab('login')">Login</button>
+          <button class="modal__tab" onclick="switchTab('register')">Register</button>
+        </div>
+        <div class="modal__tab__content active" id="tab-login">
+          <form onsubmit="handleLogin(event)">
+            <div class="form__group"><label>Email</label><input type="email" id="login-email" placeholder="you@example.com" required /><p class="form__error" id="login-error"></p></div>
+            <div class="form__group"><label>Password</label><input type="password" id="login-pass" placeholder="&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;&#x2022;" required /></div>
+            <div class="form__group"><button type="submit" class="btn">Login</button></div>
+          </form>
+        </div>
+        <div class="modal__tab__content" id="tab-register">
+          <form onsubmit="handleRegister(event)">
+            <div class="form__group"><label>Username</label><input type="text" id="reg-name" placeholder="Your name" required /></div>
+            <div class="form__group"><label>Email</label><input type="email" id="reg-email" placeholder="you@example.com" required /><p class="form__error" id="reg-error"></p></div>
+            <div class="form__group"><label>Password</label><input type="password" id="reg-pass" placeholder="Min 6 characters" required /></div>
+            <div class="form__group"><button type="submit" class="btn">Create Account</button></div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- CHECKOUT MODAL -->
+    <div class="modal__overlay" id="checkout-modal">
+      <div class="modal">
+        <button class="modal__close" onclick="closeCheckout()"><i class="ri-close-line"></i></button>
+        <h2 class="modal__title">Order Summary &#x1F6D2;</h2>
+        <div id="checkout-content">
+          <div class="checkout__summary" id="checkout-items"></div>
+          <button class="btn" style="width:100%;justify-content:center;" onclick="placeOrder()">Place Order <i class="ri-check-line"></i></button>
+        </div>
+        <div class="order__success" id="order-success" style="display:none;">
+          <i class="ri-checkbox-circle-fill"></i>
+          <h3>Order Placed!</h3>
+          <p>Thank you! Your order is being prepared with love.</p>
+          <button class="btn" style="margin-top:1rem;" onclick="closeCheckout()">Continue Shopping</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
     <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="cart.js"></script>
     <script src="main.js"></script>
     <script src="contact.js"></script>
   </body>
