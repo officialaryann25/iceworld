@@ -131,6 +131,9 @@ function handleRegister(e) {
     return;
   }
 
+  // NOTE: Passwords are stored unencrypted because this is a client-side demo
+  // with no backend. In production, always hash passwords server-side and
+  // use a secure auth service — never store credentials in localStorage.
   users.push({ username: name, email, password: pass });
   localStorage.setItem('iceworld_users', JSON.stringify(users));
 

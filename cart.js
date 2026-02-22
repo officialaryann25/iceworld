@@ -103,27 +103,62 @@ function renderCartItems() {
     return;
   }
 
-  let html = '';
+  // Build DOM nodes safely using createElement to avoid XSS
+  const fragment = document.createDocumentFragment();
+
   cart.forEach(item => {
-    html += `
-    <div class="cart__item">
-      <img class="cart__item__img" src="${item.img}" alt="${item.name}" onerror="this.src='https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400'" />
-      <div class="cart__item__info">
-        <p class="cart__item__name">${item.name}</p>
-        <p class="cart__item__price">&#x20B9;${item.price} each</p>
-        <div class="cart__item__controls">
-          <button class="qty__btn" onclick="updateQty('${item.name}', -1)">-</button>
-          <span class="qty__value">${item.qty}</span>
-          <button class="qty__btn" onclick="updateQty('${item.name}', 1)">+</button>
-        </div>
-      </div>
-      <button class="cart__item__remove" onclick="removeFromCart('${item.name}')" title="Remove">
-        <i class="ri-delete-bin-line"></i>
-      </button>
-    </div>`;
+    const row = document.createElement('div');
+    row.className = 'cart__item';
+
+    const img = document.createElement('img');
+    img.className = 'cart__item__img';
+    img.src = item.img;
+    img.alt = item.name;
+    img.onerror = () => { img.src = 'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400'; };
+
+    const info = document.createElement('div');
+    info.className = 'cart__item__info';
+
+    const nameEl = document.createElement('p');
+    nameEl.className = 'cart__item__name';
+    nameEl.textContent = item.name;
+
+    const priceEl = document.createElement('p');
+    priceEl.className = 'cart__item__price';
+    priceEl.textContent = '₹' + item.price + ' each';
+
+    const controls = document.createElement('div');
+    controls.className = 'cart__item__controls';
+
+    const minusBtn = document.createElement('button');
+    minusBtn.className = 'qty__btn';
+    minusBtn.textContent = '-';
+    minusBtn.addEventListener('click', () => updateQty(item.name, -1));
+
+    const qtySpan = document.createElement('span');
+    qtySpan.className = 'qty__value';
+    qtySpan.textContent = item.qty;
+
+    const plusBtn = document.createElement('button');
+    plusBtn.className = 'qty__btn';
+    plusBtn.textContent = '+';
+    plusBtn.addEventListener('click', () => updateQty(item.name, 1));
+
+    controls.append(minusBtn, qtySpan, plusBtn);
+    info.append(nameEl, priceEl, controls);
+
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'cart__item__remove';
+    removeBtn.title = 'Remove';
+    removeBtn.innerHTML = '<i class="ri-delete-bin-line"></i>';
+    removeBtn.addEventListener('click', () => removeFromCart(item.name));
+
+    row.append(img, info, removeBtn);
+    fragment.appendChild(row);
   });
 
-  listEl.innerHTML = html;
+  listEl.innerHTML = '';
+  listEl.appendChild(fragment);
 
   if (totalEl) {
     totalEl.textContent = '₹' + calculateTotal(cart);
