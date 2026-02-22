@@ -22,14 +22,19 @@
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#menu">Menu</a></li>
-        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="category.html">Categories</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <div class="nav__btns">
-        <button class="btn"><i class="ri-shopping-cart-line"></i></button>
-        <button class="btn"><i class="ri-notification-3-fill"></i></button>
+        <button class="btn" id="login-btn" title="Login"><i class="ri-user-line"></i></button>
+        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;"></span>
+        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout"><i class="ri-logout-box-line"></i></button>
+        <button class="btn" id="cart-btn" title="Cart">
+          <i class="ri-shopping-cart-line"></i>
+          <span class="cart-badge" id="cart-badge" style="display:none;">0</span>
+        </button>
       </div>
     </nav>
 
@@ -134,8 +139,8 @@
         <div class="footer__col">
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#menu">Menu</a></li>
-            <li><a href="index.html#categories">Categories</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="category.html">Categories</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
@@ -162,7 +167,62 @@
       </div>
     </footer>
 
+    <!-- CART MODAL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+      <div class="cart-modal__header">
+        <h3><i class="ri-shopping-cart-line"></i> Your Cart</h3>
+        <button class="cart-close-btn" id="cart-close-btn"><i class="ri-close-line"></i></button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-modal__footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total">&#x20B9;0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div class="auth-overlay" id="auth-overlay">
+      <div class="auth-modal">
+        <button class="auth-close-btn" id="auth-close-btn"><i class="ri-close-line"></i></button>
+        <h2>Ice<span style="color:var(--primary-color)">World</span></h2>
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Login</button>
+          <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+        <p class="auth-error" id="auth-error"></p>
+        <div class="auth-panel active" id="login-panel">
+          <form class="auth-form" id="login-form">
+            <input type="email" id="login-email" placeholder="Email address" required />
+            <input type="password" id="login-password" placeholder="Password" required />
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </div>
+        <div class="auth-panel" id="register-panel" style="display:none;">
+          <form class="auth-form" id="register-form">
+            <input type="text" id="reg-name" placeholder="Full name" required />
+            <input type="email" id="reg-email" placeholder="Email address" required />
+            <input type="password" id="reg-password" placeholder="Password (min 6 chars)" required />
+            <button type="submit" class="btn">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>
+    <script>
+      document.querySelectorAll(".auth-tab").forEach((tab) => {
+        tab.addEventListener("click", () => {
+          const target = tab.dataset.tab;
+          document.querySelectorAll(".auth-panel").forEach((p) => {
+            p.style.display = p.id === target + "-panel" ? "block" : "none";
+          });
+        });
+      });
+    </script>
   </body>
 </html>
