@@ -131,9 +131,11 @@ function handleRegister(e) {
     return;
   }
 
-  // NOTE: Passwords are stored unencrypted because this is a client-side demo
-  // with no backend. In production, always hash passwords server-side and
-  // use a secure auth service — never store credentials in localStorage.
+  // ⚠️  DEMO ONLY — NOT FOR PRODUCTION USE ⚠️
+  // Passwords are stored as plain text in localStorage solely because this is
+  // a client-side prototype with no backend server. Before deploying publicly,
+  // replace this with a proper server-side auth system that hashes passwords
+  // (e.g. bcrypt) and never stores credentials in the browser.
   users.push({ username: name, email, password: pass });
   localStorage.setItem('iceworld_users', JSON.stringify(users));
 
@@ -351,6 +353,23 @@ if (typeof ScrollReveal !== 'undefined') {
   sr.reveal('.contact__hero .section__header',    { origin: 'bottom' });
   sr.reveal('.contact__hero .section__description',{ origin: 'bottom', delay: 200 });
   sr.reveal('.contact__form__wrapper',            { origin: 'bottom', delay: 200 });
+} else {
+  // Fallback: use IntersectionObserver to activate reveal elements when ScrollReveal is unavailable
+  const revealEls = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window) {
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+          obs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    revealEls.forEach((el) => obs.observe(el));
+  } else {
+    // Older browsers: just show everything immediately
+    revealEls.forEach((el) => el.classList.add('active'));
+  }
 }
 
 /* ============================================
