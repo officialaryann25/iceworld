@@ -9,6 +9,7 @@
     />
     <link rel="stylesheet" href="styles.css" />
     <title>About Us | IceWorld</title>
+    <meta name="description" content="Learn the story of IceWorld, meet our founders Mahi Sehrawat and Priyanshi, and discover the values behind our premium ice creams." />
   </head>
   <body>
     <nav>
@@ -22,14 +23,19 @@
       </div>
       <ul class="nav__links" id="nav-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="index.html#menu">Menu</a></li>
-        <li><a href="index.html#categories">Categories</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="category.html">Categories</a></li>
         <li><a href="about.html">About Us</a></li>
         <li><a href="contact.html">Contact Us</a></li>
       </ul>
       <div class="nav__btns">
-        <button class="btn"><i class="ri-shopping-cart-line"></i></button>
-        <button class="btn"><i class="ri-notification-3-fill"></i></button>
+        <button class="btn" id="login-btn" title="Login" aria-label="Login to your account"><i class="ri-user-line"></i></button>
+        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;" aria-live="polite"></span>
+        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout" aria-label="Logout"><i class="ri-logout-box-line"></i></button>
+        <button class="btn" id="cart-btn" title="Cart" aria-label="Open shopping cart">
+          <i class="ri-shopping-cart-line"></i>
+          <span class="cart-badge" id="cart-badge" style="display:none;" aria-label="items in cart">0</span>
+        </button>
       </div>
     </nav>
 
@@ -44,6 +50,7 @@
 
     <section class="section__container about__container">
       <div class="about__content">
+        <div class="section__label">📖 Our Story</div>
         <h2 class="section__header">Our Story</h2>
         <p class="section__description">
           IceWorld was founded with a simple mission: to bring joy and happiness through 
@@ -58,12 +65,13 @@
       </div>
 
       <div class="owners__section">
+        <div class="section__label">👥 The Team</div>
         <h2 class="section__header">Meet Our Owners</h2>
         
         <div class="owners__grid">
           <div class="owner__card">
-            <div class="owner__image">
-              <img src="assets/owner-1.jpg" alt="Mahi Sehrawat" />
+            <div class="owner__image owner__image--placeholder" role="img" aria-label="Mahi Sehrawat">
+              🍦
             </div>
             <div class="owner__info">
               <h3>Mahi Sehrawat</h3>
@@ -80,8 +88,8 @@
           </div>
 
           <div class="owner__card">
-            <div class="owner__image">
-              <img src="assets/owner-2.jpg" alt="Priyanshi" />
+            <div class="owner__image owner__image--placeholder" role="img" aria-label="Priyanshi">
+              ☕
             </div>
             <div class="owner__info">
               <h3>Priyanshi</h3>
@@ -100,6 +108,7 @@
       </div>
 
       <div class="values__section">
+        <div class="section__label">💎 What We Stand For</div>
         <h2 class="section__header">Our Values</h2>
         <div class="values__grid">
           <div class="value__card">
@@ -134,8 +143,8 @@
         <div class="footer__col">
           <ul class="footer__links">
             <li><a href="index.html">Home</a></li>
-            <li><a href="index.html#menu">Menu</a></li>
-            <li><a href="index.html#categories">Categories</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="category.html">Categories</a></li>
             <li><a href="about.html">About Us</a></li>
             <li><a href="contact.html">Contact Us</a></li>
           </ul>
@@ -158,9 +167,54 @@
         </div>
       </div>
       <div class="footer__bar">
-        Copyright © 2025 Web Design Mastery. All rights reserved.
+        Copyright &copy; 2025 IceWorld. All rights reserved.
       </div>
     </footer>
+
+    <!-- CART MODAL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+      <div class="cart-modal__header">
+        <h3><i class="ri-shopping-cart-line"></i> Your Cart</h3>
+        <button class="cart-close-btn" id="cart-close-btn"><i class="ri-close-line"></i></button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-modal__footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total">&#x20B9;0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div class="auth-overlay" id="auth-overlay">
+      <div class="auth-modal">
+        <button class="auth-close-btn" id="auth-close-btn"><i class="ri-close-line"></i></button>
+        <h2>Ice<span style="color:var(--primary-color)">World</span></h2>
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Login</button>
+          <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+        <p class="auth-error" id="auth-error"></p>
+        <div class="auth-panel active" id="login-panel">
+          <form class="auth-form" id="login-form">
+            <input type="email" id="login-email" placeholder="Email address" required />
+            <input type="password" id="login-password" placeholder="Password" required />
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </div>
+        <div class="auth-panel" id="register-panel" style="display:none;">
+          <form class="auth-form" id="register-form">
+            <input type="text" id="reg-name" placeholder="Full name" required />
+            <input type="email" id="reg-email" placeholder="Email address" required />
+            <input type="password" id="reg-password" placeholder="Password (min 6 chars)" required />
+            <button type="submit" class="btn">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
 
     <script src="https://unpkg.com/scrollreveal"></script>
     <script src="main.js"></script>

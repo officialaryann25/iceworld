@@ -1,19 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IceWorld Menu</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Menu | IceWorld</title>
+    <meta name="description" content="Explore IceWorld's full menu of ice creams, coffees, shakes and desserts. Filter by category and order your favourite." />
+  </head>
+  <body>
+
+    <!-- NAV -->
     <nav>
-        <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="category.html">Categories</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="category.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn" id="login-btn" title="Login" aria-label="Login to your account"><i class="ri-user-line"></i></button>
+        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;" aria-live="polite"></span>
+        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout" aria-label="Logout"><i class="ri-logout-box-line"></i></button>
+        <button class="btn" id="cart-btn" title="Cart" aria-label="Open shopping cart">
+          <i class="ri-shopping-cart-line"></i>
+          <span class="cart-badge" id="cart-badge" style="display:none;" aria-label="items in cart">0</span>
+        </button>
+      </div>
     </nav>
-    <h1>Menu</h1>
-</body>
+
+    <!-- HERO -->
+    <section class="menu__hero">
+      <div class="section__label">🍽️ Full Menu</div>
+      <h1 class="section__header">Our Full Menu</h1>
+      <p class="section__description">Explore every delicious item we lovingly craft — filter by your craving!</p>
+    </section>
+
+    <!-- FILTERS -->
+    <div class="menu__filters">
+      <button class="filter-btn active" data-filter="all">All Items</button>
+      <button class="filter-btn" data-filter="ice-cream">&#x1F366; Ice Cream</button>
+      <button class="filter-btn" data-filter="coffee">&#x2615; Coffee</button>
+      <button class="filter-btn" data-filter="shake">&#x1F964; Shakes</button>
+      <button class="filter-btn" data-filter="dessert">&#x1F370; Desserts</button>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div class="menu__grid">
+
+      <!-- Ice Creams -->
+      <div class="menu__card" data-category="ice-cream">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=500&auto=format&fit=crop" alt="Strawberry Dream" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Ice Cream</p>
+          <h3 class="menu__card__name">Strawberry Dream</h3>
+          <p class="menu__card__desc">Fresh strawberry scoops with a creamy base, topped with real fruit pieces.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;120</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m1','Strawberry Dream',120,'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__card" data-category="ice-cream">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=500&auto=format&fit=crop" alt="Vanilla Royale" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Ice Cream</p>
+          <h3 class="menu__card__name">Vanilla Royale</h3>
+          <p class="menu__card__desc">Classic Madagascar vanilla bean ice cream — pure, rich, and timeless.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;110</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m2','Vanilla Royale',110,'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__card" data-category="ice-cream">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=500&auto=format&fit=crop" alt="Choco Lava Sundae" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Ice Cream</p>
+          <h3 class="menu__card__name">Choco Lava Sundae</h3>
+          <p class="menu__card__desc">Warm chocolate sauce over chilled ice cream — the perfect hot-cold combo.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;160</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m3','Choco Lava Sundae',160,'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__card" data-category="ice-cream">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=500&auto=format&fit=crop" alt="Blueberry Swirl" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Ice Cream</p>
+          <h3 class="menu__card__name">Blueberry Swirl</h3>
+          <p class="menu__card__desc">Velvety blueberry ripple through creamy vanilla, bursting with antioxidant goodness.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;130</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m4','Blueberry Swirl',130,'https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coffees -->
+      <div class="menu__card" data-category="coffee">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=500&auto=format&fit=crop" alt="Mocha Bliss" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Coffee</p>
+          <h3 class="menu__card__name">Mocha Bliss</h3>
+          <p class="menu__card__desc">Espresso meets chocolate in this rich, velvety mocha — your perfect afternoon pick-me-up.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;180</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m5','Mocha Bliss',180,'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__card" data-category="coffee">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1561303600-840b53ebb2c4?w=500&auto=format&fit=crop" alt="Caramel Cappuccino" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Coffee</p>
+          <h3 class="menu__card__name">Caramel Cappuccino</h3>
+          <p class="menu__card__desc">Silky espresso topped with frothed milk and a drizzle of golden caramel.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;200</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m6','Caramel Cappuccino',200,'https://images.unsplash.com/photo-1561303600-840b53ebb2c4?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__card" data-category="coffee">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=500&auto=format&fit=crop" alt="Cold Brew Delight" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Coffee</p>
+          <h3 class="menu__card__name">Cold Brew Delight</h3>
+          <p class="menu__card__desc">12-hour steeped cold brew poured over ice — smooth, strong, and utterly refreshing.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;160</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m7','Cold Brew Delight',160,'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Shakes -->
+      <div class="menu__card" data-category="shake">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=500&auto=format&fit=crop" alt="Mango Tango Shake" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Shake</p>
+          <h3 class="menu__card__name">Mango Tango Shake</h3>
+          <p class="menu__card__desc">Thick, luscious Alphonso mango blended with chilled milk — summer in a glass.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;150</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m8','Mango Tango Shake',150,'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__card" data-category="shake">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=500&auto=format&fit=crop" alt="Oreo Crunch Shake" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Shake</p>
+          <h3 class="menu__card__name">Oreo Crunch Shake</h3>
+          <p class="menu__card__desc">Crushed Oreos blended into creamy vanilla — loaded with cookie crumbles and whipped cream.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;170</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m9','Oreo Crunch Shake',170,'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__card" data-category="shake">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1614777986387-7b0f785d7c17?w=500&auto=format&fit=crop" alt="Strawberry Banana Shake" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Shake</p>
+          <h3 class="menu__card__name">Strawberry Banana</h3>
+          <p class="menu__card__desc">The classic combo — ripe bananas and fresh strawberries blended to perfection.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;140</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m10','Strawberry Banana Shake',140,'https://images.unsplash.com/photo-1614777986387-7b0f785d7c17?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Desserts -->
+      <div class="menu__card" data-category="dessert">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=500&auto=format&fit=crop" alt="Belgian Waffle" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Dessert</p>
+          <h3 class="menu__card__name">Belgian Waffle</h3>
+          <p class="menu__card__desc">Golden crispy waffle topped with vanilla ice cream, chocolate sauce, and fresh berries.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;220</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m11','Belgian Waffle',220,'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu__card" data-category="dessert">
+        <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=500&auto=format&fit=crop" alt="Choco Lava Cake" />
+        <div class="menu__card__body">
+          <p class="menu__card__category">Dessert</p>
+          <h3 class="menu__card__name">Choco Lava Cake</h3>
+          <p class="menu__card__desc">Warm dark chocolate cake with a gooey molten centre, served with vanilla ice cream.</p>
+          <div class="menu__card__footer">
+            <span class="menu__card__price">&#x20B9;190</span>
+            <button class="add-to-cart-btn" onclick="addToCart('m12','Choco Lava Cake',190,'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=100')">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+        </div>
+        <div class="footer__col">
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="category.html">Categories</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <ul class="socials">
+            <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+            <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+            <li><a href="#"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">Copyright &copy; 2025 IceWorld. All rights reserved.</div>
+    </footer>
+
+    <!-- CART MODAL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+      <div class="cart-modal__header">
+        <h3><i class="ri-shopping-cart-line"></i> Your Cart</h3>
+        <button class="cart-close-btn" id="cart-close-btn"><i class="ri-close-line"></i></button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-modal__footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total">&#x20B9;0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div class="auth-overlay" id="auth-overlay">
+      <div class="auth-modal">
+        <button class="auth-close-btn" id="auth-close-btn"><i class="ri-close-line"></i></button>
+        <h2>Ice<span style="color:var(--primary-color)">World</span></h2>
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Login</button>
+          <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+        <p class="auth-error" id="auth-error"></p>
+        <div class="auth-panel active" id="login-panel">
+          <form class="auth-form" id="login-form">
+            <input type="email" id="login-email" placeholder="Email address" required />
+            <input type="password" id="login-password" placeholder="Password" required />
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </div>
+        <div class="auth-panel" id="register-panel" style="display:none;">
+          <form class="auth-form" id="register-form">
+            <input type="text" id="reg-name" placeholder="Full name" required />
+            <input type="email" id="reg-email" placeholder="Email address" required />
+            <input type="password" id="reg-password" placeholder="Password (min 6 chars)" required />
+            <button type="submit" class="btn">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
 </html>

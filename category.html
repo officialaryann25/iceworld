@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Categories | IceWorld</title>
+    <meta name="description" content="Browse IceWorld categories: handcrafted ice creams, artisan coffees, thick shakes, and indulgent desserts." />
+  </head>
+  <body>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="category.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn" id="login-btn" title="Login" aria-label="Login to your account"><i class="ri-user-line"></i></button>
+        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;" aria-live="polite"></span>
+        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout" aria-label="Logout"><i class="ri-logout-box-line"></i></button>
+        <button class="btn" id="cart-btn" title="Cart" aria-label="Open shopping cart">
+          <i class="ri-shopping-cart-line"></i>
+          <span class="cart-badge" id="cart-badge" style="display:none;" aria-label="items in cart">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="category__hero">
+      <h1 class="section__header">Explore Categories</h1>
+      <p class="section__description">Browse by your favourite — ice creams, coffees, shakes, or desserts!</p>
+    </section>
+
+    <!-- ICE CREAM -->
+    <section class="category__section" id="ice-cream">
+      <div class="section__label">🍦 Ice Creams</div>
+      <h2 class="section__header">&#x1F366; Ice Creams</h2>
+      <p class="section__description">Handcrafted scoops using the finest ingredients, available in 20+ flavours.</p>
+      <div class="category__grid">
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&auto=format&fit=crop" alt="Strawberry Dream" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Strawberry Dream</h4>
+            <p class="category__card__price">&#x20B9;120</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c1','Strawberry Dream',120,'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=400&auto=format&fit=crop" alt="Vanilla Royale" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Vanilla Royale</h4>
+            <p class="category__card__price">&#x20B9;110</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c2','Vanilla Royale',110,'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop" alt="Choco Lava Sundae" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Choco Lava Sundae</h4>
+            <p class="category__card__price">&#x20B9;160</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c3','Choco Lava Sundae',160,'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=400&auto=format&fit=crop" alt="Blueberry Swirl" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Blueberry Swirl</h4>
+            <p class="category__card__price">&#x20B9;130</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c4','Blueberry Swirl',130,'https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- COFFEE -->
+    <section class="category__section" id="coffee">
+      <div class="section__label">☕ Coffees</div>
+      <h2 class="section__header">&#x2615; Coffees</h2>
+      <p class="section__description">Artisan blends sourced from premium estates — crafted for true coffee lovers.</p>
+      <div class="category__grid">
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&auto=format&fit=crop" alt="Mocha Bliss" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Mocha Bliss</h4>
+            <p class="category__card__price">&#x20B9;180</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c5','Mocha Bliss',180,'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1561303600-840b53ebb2c4?w=400&auto=format&fit=crop" alt="Caramel Cappuccino" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Caramel Cappuccino</h4>
+            <p class="category__card__price">&#x20B9;200</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c6','Caramel Cappuccino',200,'https://images.unsplash.com/photo-1561303600-840b53ebb2c4?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=400&auto=format&fit=crop" alt="Cold Brew Delight" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Cold Brew Delight</h4>
+            <p class="category__card__price">&#x20B9;160</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c7','Cold Brew Delight',160,'https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=400&auto=format&fit=crop" alt="Espresso Shot" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Double Espresso</h4>
+            <p class="category__card__price">&#x20B9;140</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c8','Double Espresso',140,'https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SHAKES -->
+    <section class="category__section" id="shakes">
+      <div class="section__label">🥤 Shakes</div>
+      <h2 class="section__header">&#x1F964; Shakes</h2>
+      <p class="section__description">Thick, creamy milkshakes blended to perfection — the ultimate comfort drink.</p>
+      <div class="category__grid">
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop" alt="Mango Tango" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Mango Tango</h4>
+            <p class="category__card__price">&#x20B9;150</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c9','Mango Tango Shake',150,'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=400&auto=format&fit=crop" alt="Oreo Crunch" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Oreo Crunch</h4>
+            <p class="category__card__price">&#x20B9;170</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c10','Oreo Crunch Shake',170,'https://images.unsplash.com/photo-1590080875515-8a3a8dc5735e?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1614777986387-7b0f785d7c17?w=400&auto=format&fit=crop" alt="Strawberry Banana" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Strawberry Banana</h4>
+            <p class="category__card__price">&#x20B9;140</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c11','Strawberry Banana Shake',140,'https://images.unsplash.com/photo-1614777986387-7b0f785d7c17?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=400&auto=format&fit=crop" alt="Butterscotch Bliss" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Butterscotch Bliss</h4>
+            <p class="category__card__price">&#x20B9;155</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c12','Butterscotch Bliss Shake',155,'https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- DESSERTS -->
+    <section class="category__section" id="desserts">
+      <div class="section__label">🍰 Desserts</div>
+      <h2 class="section__header">&#x1F370; Desserts</h2>
+      <p class="section__description">Indulgent sweet creations — from warm lava cakes to crispy waffles.</p>
+      <div class="category__grid">
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=400&auto=format&fit=crop" alt="Belgian Waffle" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Belgian Waffle</h4>
+            <p class="category__card__price">&#x20B9;220</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c13','Belgian Waffle',220,'https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?w=400&auto=format&fit=crop" alt="Choco Lava Cake" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Choco Lava Cake</h4>
+            <p class="category__card__price">&#x20B9;190</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c14','Choco Lava Cake',190,'https://images.unsplash.com/photo-1551024601-bec78aea704b?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=400&auto=format&fit=crop" alt="French Toast" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">French Toast Delight</h4>
+            <p class="category__card__price">&#x20B9;175</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c15','French Toast Delight',175,'https://images.unsplash.com/photo-1484723091739-30a097e8f929?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="category__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=400&auto=format&fit=crop" alt="Sundae Special" />
+          <div class="category__card__body">
+            <h4 class="category__card__name">Sundae Special</h4>
+            <p class="category__card__price">&#x20B9;145</p>
+            <button class="add-to-cart-btn" onclick="addToCart('c16','Sundae Special',145,'https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=100')">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+        </div>
+        <div class="footer__col">
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="category.html">Categories</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <ul class="socials">
+            <li><a href="#"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="#"><i class="ri-instagram-line"></i></a></li>
+            <li><a href="#"><i class="ri-twitter-fill"></i></a></li>
+            <li><a href="#"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">Copyright &copy; 2025 IceWorld. All rights reserved.</div>
+    </footer>
+
+    <!-- CART MODAL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+      <div class="cart-modal__header">
+        <h3><i class="ri-shopping-cart-line"></i> Your Cart</h3>
+        <button class="cart-close-btn" id="cart-close-btn"><i class="ri-close-line"></i></button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-modal__footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total">&#x20B9;0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div class="auth-overlay" id="auth-overlay">
+      <div class="auth-modal">
+        <button class="auth-close-btn" id="auth-close-btn"><i class="ri-close-line"></i></button>
+        <h2>Ice<span style="color:var(--primary-color)">World</span></h2>
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Login</button>
+          <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+        <p class="auth-error" id="auth-error"></p>
+        <div class="auth-panel active" id="login-panel">
+          <form class="auth-form" id="login-form">
+            <input type="email" id="login-email" placeholder="Email address" required />
+            <input type="password" id="login-password" placeholder="Password" required />
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </div>
+        <div class="auth-panel" id="register-panel" style="display:none;">
+          <form class="auth-form" id="register-form">
+            <input type="text" id="reg-name" placeholder="Full name" required />
+            <input type="email" id="reg-email" placeholder="Email address" required />
+            <input type="password" id="reg-password" placeholder="Password (min 6 chars)" required />
+            <button type="submit" class="btn">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

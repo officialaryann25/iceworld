@@ -1,1 +1,383 @@
-<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Ice World</title>\n    <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n    <header>\n        <img src=\"ice-cream.jpg\" alt=\"Ice Cream Image\">\n        <nav>\n            <ul>\n                <li><a href=\"index.html\">Home</a></li>\n                <li><a href=\"menu.html\">Menu</a></li>\n                <li><a href=\"categories.html\">Categories</a></li>\n                <li><a href=\"about.html\">About Us</a></li>\n                <li><a href=\"contact.html\">Contact Us</a></li>\n            </ul>\n        </nav>\n    </header>\n    <main>\n        <section id=\"popular-ice-cream\">\n            <h2>Popular Ice Cream</h2>\n            <div>Ice Cream flavors here</div>\n        </section>\n        <section id=\"most-selling-ice-cream\">\n            <h2>Most Selling Ice Cream</h2>\n            <div>Ice Cream flavors here</div>\n        </section>\n        <section id=\"banner\">\n            <h2>Special Offers</h2>\n            <div>Banner content here</div>\n        </section>\n        <section id=\"subscribe\">\n            <h2>Subscribe</h2>\n            <form>\n                <input type=\"email\" placeholder=\"Your Email\">\n                <button type=\"submit\">Subscribe</button>\n            </form>\n        </section>\n    </main>\n    <footer>\n        <nav>\n            <ul>\n                <li><a href=\"index.html\">Home</a></li>\n                <li><a href=\"menu.html\">Menu</a></li>\n                <li><a href=\"categories.html\">Categories</a></li>\n                <li><a href=\"about.html\">About Us</a></li>\n                <li><a href=\"contact.html\">Contact Us</a></li>\n            </ul>\n        </nav>\n        <p>&copy; 2026 Ice World</p>\n    </footer>\n</body>\n</html>\n
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>IceWorld - Premium Ice Cream &amp; Coffee</title>
+    <meta name="description" content="IceWorld — Premium handcrafted ice creams, rich coffees &amp; dreamy desserts. Order online and taste the sweet side of life." />
+  </head>
+  <body>
+
+    <!-- ANNOUNCEMENT BAR -->
+    <div class="promo__bar">🎉 Free delivery on orders above ₹500 &nbsp;|&nbsp; New flavours launching this week! 🍦</div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="category.html">Categories</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="nav__btns">
+        <button class="btn" id="login-btn" title="Login" aria-label="Login to your account"><i class="ri-user-line"></i></button>
+        <span id="user-display" style="display:none;font-weight:600;color:var(--text-dark);font-size:0.9rem;" aria-live="polite"></span>
+        <button class="btn" id="logout-btn" style="display:none;font-size:0.9rem;" title="Logout" aria-label="Logout"><i class="ri-logout-box-line"></i></button>
+        <button class="btn" id="cart-btn" title="Cart" aria-label="Open shopping cart">
+          <i class="ri-shopping-cart-line"></i>
+          <span class="cart-badge" id="cart-badge" style="display:none;" aria-label="items in cart">0</span>
+        </button>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <header>
+      <div class="header__content">
+        <div class="hero__badge" aria-label="Announcement: New Flavours Every Week"><span class="hero__badge-dot" aria-hidden="true"></span>✨ New Flavours Every Week</div>
+        <h1>Taste The <span>Sweet</span><br>Side of Life</h1>
+        <p class="section__description">Premium handcrafted ice creams, rich coffees &amp; dreamy desserts — made with love, served with joy.</p>
+        <div class="hero__cta-group">
+          <a href="menu.html" class="btn">Explore Menu <i class="ri-arrow-right-line"></i></a>
+          <a href="category.html" class="btn--outline">Browse Categories</a>
+        </div>
+        <ul class="socials">
+          <li><a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+          <li><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+          <li><a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a></li>
+          <li><a href="#" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+        </ul>
+      </div>
+      <div class="header__image">
+        <img class="img-float" src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?w=700&auto=format&fit=crop" alt="Delicious ice cream scoops" fetchpriority="high" />
+        <div class="floating-badge floating-badge--offer" aria-hidden="true"><i class="ri-star-fill" style="color:#ffa030"></i><span>20% OFF Today!</span></div>
+        <div class="floating-badge floating-badge--rating" aria-hidden="true"><i class="ri-heart-fill" style="color:#e8315a"></i><span>10,000+ Happy Customers</span></div>
+      </div>
+    </header>
+
+    <!-- STATS BAND -->
+    <div class="stats__section">
+      <div class="stats__grid">
+        <div class="stats__item"><span class="stats__number">10K+</span><span class="stats__label">Happy Customers</span></div>
+        <div class="stats__item"><span class="stats__number">30+</span><span class="stats__label">Unique Flavours</span></div>
+        <div class="stats__item"><span class="stats__number">4.9★</span><span class="stats__label">Average Rating</span></div>
+        <div class="stats__item"><span class="stats__number">100%</span><span class="stats__label">Fresh Ingredients</span></div>
+      </div>
+    </div>
+
+    <!-- POPULAR PRODUCTS -->
+    <section class="section__container popular__container" id="menu">
+      <div class="section__label">🔥 Fan Favourites</div>
+      <h2 class="section__header">Our Popular Picks</h2>
+      <p class="section__description">Handcrafted favourites loved by thousands of happy customers.</p>
+      <div class="popular__grid">
+
+        <div class="popular__card">
+          <div class="card__badge">🔥 Best Seller</div>
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=400&auto=format&fit=crop" alt="Strawberry Dream" />
+          <div class="popular__card__content">
+            <h4>Strawberry Dream</h4>
+            <h3>&#x20B9;120</h3>
+            <button class="add-to-cart-btn" onclick="addToCart('p1','Strawberry Dream',120,'https://images.unsplash.com/photo-1501443762994-82bd5dace89a?w=100&auto=format&fit=crop')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="popular__card">
+          <div class="card__badge card__badge--new">⭐ Popular</div>
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=400&auto=format&fit=crop" alt="Mocha Bliss Coffee" />
+          <div class="popular__card__content">
+            <h4>Mocha Bliss Coffee</h4>
+            <h3>&#x20B9;180</h3>
+            <button class="add-to-cart-btn" onclick="addToCart('p2','Mocha Bliss Coffee',180,'https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=100&auto=format&fit=crop')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="popular__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=400&auto=format&fit=crop" alt="Mango Tango Shake" />
+          <div class="popular__card__content">
+            <h4>Mango Tango Shake</h4>
+            <h3>&#x20B9;150</h3>
+            <button class="add-to-cart-btn" onclick="addToCart('p3','Mango Tango Shake',150,'https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=100&auto=format&fit=crop')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="popular__card">
+          <div class="card__badge card__badge--sale">🎁 Deal</div>
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=400&auto=format&fit=crop" alt="Choco Lava Sundae" />
+          <div class="popular__card__content">
+            <h4>Choco Lava Sundae</h4>
+            <h3>&#x20B9;160</h3>
+            <button class="add-to-cart-btn" onclick="addToCart('p4','Choco Lava Sundae',160,'https://images.unsplash.com/photo-1563805042-7684c019e1cb?w=100&auto=format&fit=crop')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="popular__card">
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=400&auto=format&fit=crop" alt="Vanilla Royale" />
+          <div class="popular__card__content">
+            <h4>Vanilla Royale</h4>
+            <h3>&#x20B9;110</h3>
+            <button class="add-to-cart-btn" onclick="addToCart('p5','Vanilla Royale',110,'https://images.unsplash.com/photo-1624353365286-3f8d62daad51?w=100&auto=format&fit=crop')">Add to Cart</button>
+          </div>
+        </div>
+
+        <div class="popular__card">
+          <div class="card__badge card__badge--new">✨ New</div>
+          <img loading="lazy" class="img-hover-zoom" src="https://images.unsplash.com/photo-1561303600-840b53ebb2c4?w=400&auto=format&fit=crop" alt="Caramel Cappuccino" />
+          <div class="popular__card__content">
+            <h4>Caramel Cappuccino</h4>
+            <h3>&#x20B9;200</h3>
+            <button class="add-to-cart-btn" onclick="addToCart('p6','Caramel Cappuccino',200,'https://images.unsplash.com/photo-1561303600-840b53ebb2c4?w=100&auto=format&fit=crop')">Add to Cart</button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CATEGORY PREVIEW -->
+    <section class="section__container category__preview__section" id="categories">
+      <div class="section__label">🗂️ Browse By Type</div>
+      <h2 class="section__header">Discover Our World</h2>
+      <p class="section__description">Explore our exclusive categories crafted for every craving.</p>
+      <div class="category__preview-grid">
+
+        <a href="category.html#ice-cream" class="category__preview-card" aria-label="Ice Creams">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1580915411954-282cb1b0d780?w=700&auto=format&fit=crop" alt="Ice Creams" />
+          <div class="category__preview-card__overlay">
+            <div class="category__preview-card__emoji">🍦</div>
+            <div class="category__preview-card__title">Ice Creams</div>
+            <div class="category__preview-card__count">20+ Flavours</div>
+          </div>
+        </a>
+
+        <a href="category.html#coffee" class="category__preview-card" aria-label="Coffees">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=700&auto=format&fit=crop" alt="Coffees" />
+          <div class="category__preview-card__overlay">
+            <div class="category__preview-card__emoji">☕</div>
+            <div class="category__preview-card__title">Coffees</div>
+            <div class="category__preview-card__count">Artisan Blends</div>
+          </div>
+        </a>
+
+        <a href="category.html#shakes" class="category__preview-card" aria-label="Shakes">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1572490122747-3968b75cc699?w=700&auto=format&fit=crop" alt="Shakes" />
+          <div class="category__preview-card__overlay">
+            <div class="category__preview-card__emoji">🥤</div>
+            <div class="category__preview-card__title">Shakes</div>
+            <div class="category__preview-card__count">Thick &amp; Creamy</div>
+          </div>
+        </a>
+
+        <a href="category.html#desserts" class="category__preview-card" aria-label="Desserts">
+          <img loading="lazy" src="https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=700&auto=format&fit=crop" alt="Desserts" />
+          <div class="category__preview-card__overlay">
+            <div class="category__preview-card__emoji">🍰</div>
+            <div class="category__preview-card__title">Desserts</div>
+            <div class="category__preview-card__count">Indulgent Treats</div>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- SPECIAL OFFER -->
+    <div class="offer__section">
+      <div class="offer__badge">🎉 Limited Time Deal</div>
+      <h2 class="offer__title">Get <span>20% Off</span> Your<br>First Order!</h2>
+      <p class="offer__desc">Use our exclusive promo code at checkout and enjoy a sweet discount on your very first IceWorld order.</p>
+      <div class="offer__code-wrapper">
+        <span class="offer__code__label">Use Promo Code</span>
+        <span class="offer__code">IWORLD20</span>
+      </div>
+      <a href="menu.html" class="btn">Order Now <i class="ri-arrow-right-line"></i></a>
+    </div>
+
+    <!-- BANNER -->
+    <div class="banner">
+      <div class="banner__image"></div>
+      <div class="banner__content">
+        <div class="section__label">🌟 Why Us</div>
+        <h2 class="section__header">Why Choose IceWorld?</h2>
+        <p class="section__description">We're not just a store — we're an experience. Here's what makes us special.</p>
+        <div class="banner__flex">
+          <div class="banner__card">
+            <img src="https://cdn-icons-png.flaticon.com/64/2983/2983788.png" alt="Fresh" />
+            <h4>100% Fresh</h4>
+          </div>
+          <div class="banner__card">
+            <img src="https://cdn-icons-png.flaticon.com/64/3081/3081559.png" alt="Premium" />
+            <h4>Premium Quality</h4>
+          </div>
+          <div class="banner__card">
+            <img src="https://cdn-icons-png.flaticon.com/64/1046/1046784.png" alt="Delivery" />
+            <h4>Fast Delivery</h4>
+          </div>
+          <div class="banner__card">
+            <img src="https://cdn-icons-png.flaticon.com/64/1585/1585531.png" alt="Offers" />
+            <h4>Daily Offers</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REVIEWS -->
+    <section class="section__container reviews__container">
+      <div class="section__label">💬 Customer Love</div>
+      <h2 class="section__header">What Our Customers Say</h2>
+      <p class="section__description">Real smiles, real reviews — from the IceWorld family.</p>
+      <div class="reviews__grid">
+
+        <div class="review__card">
+          <div class="review__stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          <p class="review__text">"The Strawberry Dream ice cream is absolutely divine! The freshness of ingredients is unbeatable. IceWorld is my weekend ritual!"</p>
+          <div class="review__author">
+            <div class="review__avatar">R</div>
+            <div>
+              <div class="review__name">Riya Sharma</div>
+              <div class="review__role">Regular Customer</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review__card">
+          <div class="review__stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</div>
+          <p class="review__text">"Best mocha coffee I've ever had outside of a five-star café! The ambience and service are top-notch. Highly recommended."</p>
+          <div class="review__author">
+            <div class="review__avatar">A</div>
+            <div>
+              <div class="review__name">Arjun Mehta</div>
+              <div class="review__role">Coffee Enthusiast</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="review__card">
+          <div class="review__stars">&#x2605;&#x2605;&#x2605;&#x2605;&#x2606;</div>
+          <p class="review__text">"The mango shake is to die for! Thick, creamy, and packed with real mango flavour. My kids absolutely love this place!"</p>
+          <div class="review__author">
+            <div class="review__avatar">P</div>
+            <div>
+              <div class="review__name">Pooja Gupta</div>
+              <div class="review__role">Mother of Two</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE -->
+    <div class="subscribe__content">
+      <div class="section__container" style="padding-block:0">
+        <h2 class="section__header">Stay Sweet, Stay Updated!</h2>
+        <p class="section__description">Subscribe for exclusive offers, new flavour launches &amp; seasonal discounts.</p>
+        <form id="subscribe-form">
+          <input type="email" placeholder="Enter your email address" required />
+          <button type="submit" class="btn">Subscribe</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="section__container footer__container footer__container--4col">
+        <div class="footer__col footer__col--brand">
+          <a href="index.html" class="logo">Ice<span>World</span></a>
+          <p class="section__description footer__brand-desc">Premium ice creams &amp; coffees crafted with love since 2020.</p>
+          <ul class="socials footer__brand-socials">
+            <li><a href="#" aria-label="Facebook"><i class="ri-facebook-fill"></i></a></li>
+            <li><a href="#" aria-label="Instagram"><i class="ri-instagram-line"></i></a></li>
+            <li><a href="#" aria-label="Twitter"><i class="ri-twitter-fill"></i></a></li>
+            <li><a href="#" aria-label="Pinterest"><i class="ri-pinterest-line"></i></a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Quick Links</div>
+          <ul class="footer__links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="category.html">Categories</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Categories</div>
+          <ul class="footer__links">
+            <li><a href="category.html#ice-cream">🍦 Ice Creams</a></li>
+            <li><a href="category.html#coffee">☕ Coffees</a></li>
+            <li><a href="category.html#shakes">🥤 Shakes</a></li>
+            <li><a href="category.html#desserts">🍰 Desserts</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <div class="footer__col-title">Contact Us</div>
+          <div class="footer__contact-item"><i class="ri-map-pin-fill"></i><span>New Delhi, Delhi, India — 110001</span></div>
+          <div class="footer__contact-item"><i class="ri-phone-fill"></i><span>+91 8750141860<br>+91 8368573180</span></div>
+          <div class="footer__contact-item"><i class="ri-mail-fill"></i><span>mahisehrawat2006@gmail.com</span></div>
+          <div class="footer__contact-item"><i class="ri-time-fill"></i><span>Mon–Sat: 10AM–10PM<br>Sun: 11AM–9PM</span></div>
+        </div>
+      </div>
+      <div class="footer__bar">Copyright &copy; 2025 IceWorld. All rights reserved. Made with ❤️ in Delhi.</div>
+    </footer>
+
+    <!-- CART MODAL -->
+    <div class="cart-overlay" id="cart-overlay"></div>
+    <div class="cart-modal" id="cart-modal">
+      <div class="cart-modal__header">
+        <h3><i class="ri-shopping-cart-line"></i> Your Cart</h3>
+        <button class="cart-close-btn" id="cart-close-btn"><i class="ri-close-line"></i></button>
+      </div>
+      <div class="cart-items" id="cart-items"></div>
+      <div class="cart-modal__footer">
+        <div class="cart-total">
+          <span>Total</span>
+          <span id="cart-total">&#x20B9;0.00</span>
+        </div>
+        <button class="checkout-btn" id="checkout-btn">Proceed to Checkout</button>
+      </div>
+    </div>
+
+    <!-- AUTH MODAL -->
+    <div class="auth-overlay" id="auth-overlay">
+      <div class="auth-modal">
+        <button class="auth-close-btn" id="auth-close-btn"><i class="ri-close-line"></i></button>
+        <h2>Ice<span style="color:var(--primary-color)">World</span></h2>
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-tab="login">Login</button>
+          <button class="auth-tab" data-tab="register">Register</button>
+        </div>
+        <p class="auth-error" id="auth-error"></p>
+
+        <div class="auth-panel active" id="login-panel">
+          <form class="auth-form" id="login-form">
+            <input type="email" id="login-email" placeholder="Email address" required />
+            <input type="password" id="login-password" placeholder="Password" required />
+            <button type="submit" class="btn">Login</button>
+          </form>
+        </div>
+
+        <div class="auth-panel" id="register-panel" style="display:none;">
+          <form class="auth-form" id="register-form">
+            <input type="text" id="reg-name" placeholder="Full name" required />
+            <input type="email" id="reg-email" placeholder="Email address" required />
+            <input type="password" id="reg-password" placeholder="Password (min 6 chars)" required />
+            <button type="submit" class="btn">Create Account</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
