@@ -2025,7 +2025,17 @@ footer {
   font-size: 4rem;
 }
 
-/* ===== AUTH FORM FOCUS ===== */
+/* Footer brand column text overrides (replaces inline styles) */
+.footer__brand-desc {
+  text-align: left;
+  margin-top: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.footer__brand-socials {
+  margin-top: 1.5rem;
+  justify-content: flex-start;
+}
 .auth-form input:focus {
   border-color: var(--primary-color);
   box-shadow: 0 0 0 3px rgba(var(--primary-rgb), 0.12);
@@ -2431,8 +2441,7 @@ footer {
   font-size: 1.6rem;
   font-weight: 800;
   color: #fff;
-  letter-spacing: 4px;
-  background: rgba(200, 0, 106, 0.08);
+  letter-spacing: 3px;
 }
 
 /* K) ANNOUNCEMENT BAR */
